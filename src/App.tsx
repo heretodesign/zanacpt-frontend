@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { lazy, Suspense }  from 'react';
+import 'bulma/css/bulma.min.css';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import * as PATHS from "./paths/";
+import Navbar from './components/Header/Navbar'
+import Footer from './components/Footer/Footer'
+const About = lazy(() => import('./pages'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Home = lazy(() => import('./pages'));
+const NoMatchRoute = lazy(() => import('./components/pageNotFound/NoMatchRoute'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense
+      fallback={
+        <div className="has-text-white has-text-centered">
+          <span>loading...</span>
+        </div>
+    }>
+      <Switch>
+          <Route exact path="/" component={Home}  />
+          {/* <Route exact path="/contact-us" component={Contact} /> */}
+          {/* <Route exact path="/about-us" component={About} /> */}
+          <Route component={NoMatchRoute} />
+      </Switch>
+      <Footer />
+    </Suspense>
   );
 }
 
