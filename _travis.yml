@@ -1,0 +1,25 @@
+language: generic 
+sudo: required
+services:
+  - docker 
+
+before_install:
+  # - docker build -f Dockerfile.dev .
+  - docker build -t heretodesign/zanacpt-frontend -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true heretodesign/zanacpt-frontend yarn run test
+  # - docker run -e CI=true USERNAME/docker-react yarn run test
+
+deploy:
+  provider: elasticbeanstack
+  # provider: digitaloceans
+  region: "ap-southeast-1"
+  name: "zanacpt-frontend"
+  env: "Docker-env"
+  bucket_name: "zanastaticapp"
+  bucket_path: "zanacpt-frontend"
+  on: 
+    branch: PROD
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
