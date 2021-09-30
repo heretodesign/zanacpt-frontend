@@ -170,7 +170,7 @@ export const HomePage: React.FC = () => {
                         <div className="columns">
                             <div className="column is-3 is-offset-1">
                               <div className="content">
-                                <MainPara className="has-text-left">
+                                <div className="has-text-left">
                                   <div className="card">
                                       <div className="card-image">
                                           <img src={comm} alt="Placeholder image" />
@@ -179,21 +179,21 @@ export const HomePage: React.FC = () => {
                                         <div className="media">
                                           
                                           <div className="media-content">
-                                            <p className="title is-4 has-text-centered">Residential Sanitizing</p>
+                                            <MainParaCard className="title is-4 has-text-centered">Residential Sanitizing</MainParaCard>
                                           </div>
                                         </div>
-                                        <div className="content">
+                                        <MainParaCard className="content">
                                           Sanitizing your Home requires clinical sanitizing services. Imagine your home clinically clean, free from backeria and viruses, free from mold and mildew.
                                           <br />
-                                        </div>
+                                        </MainParaCard>
                                       </div>
                                     </div>
-                                </MainPara>
+                                </div>
                               </div>
                             </div>
                             <div className="column is-4">
                               <div className="content">
-                                <MainPara className="has-text-left">
+                                <div className="has-text-left">
                                   <div className="card">
                                       <div className="card-image">
                                           <img src={governemn} alt="Placeholder image" />
@@ -202,22 +202,22 @@ export const HomePage: React.FC = () => {
                                         <div className="media">
                                           
                                           <div className="media-content">
-                                            <p className="title is-4 has-text-centered">Commercial Sanitizing</p>
+                                            <MainParaCard className="title is-4 has-text-centered">Commercial Sanitizing</MainParaCard>
                                           </div>
                                         </div>
-                                        <div className="content">
+                                        <MainParaCard className="content">
                                           Commercially dedicated & comprehensive sanitizing services offering a vast range of both contract and specialist cleaning services. 
                                           <br />
-                                        </div>
+                                        </MainParaCard>
                                       </div>
                                     </div>
-                                </MainPara>
+                                </div>
                               </div>
                             </div>
                 
                             <div className="column is-3">
                               <div className="content">
-                                <MainPara className="has-text-left">
+                                <div className="has-text-left">
                                   <div className="card">
                                       <div className="card-image">
                                           <img src={residenc} alt="Placeholder image" />
@@ -225,17 +225,17 @@ export const HomePage: React.FC = () => {
                                       <div className="card-content">
                                         <div className="media">
                                           <div className="media-content">
-                                            <p className="title is-4 has-text-centered">Government Sanitizing</p>
+                                            <MainParaCard className="title is-4 has-text-centered">Government Sanitizing</MainParaCard>
                                           </div>
                                         </div>
 
-                                        <div className="content">
+                                        <MainParaCard className="content">
                                           Dedicated and flexible government premises sanitizing services. We clean, to keep the principal and essential places bacteria free.
                                           <br />
-                                        </div>
+                                        </MainParaCard>
                                       </div>
                                     </div>
-                                </MainPara>
+                                </div>
                               </div>
                             </div>
                         </div>
