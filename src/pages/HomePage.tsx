@@ -335,7 +335,7 @@ export const HomePage: React.FC = () => {
                                             <MainParaCard>For general booking or inquiry please call</MainParaCard>
                                             <strong>
                                                 <MainParaCard className="has-text-left">
-                                                    Mobile number: +267 71572088
+                                                    Mobile number: +267 75872399 & 75034118
                                                 </MainParaCard>
                                             </strong>
                                         </div>
@@ -349,7 +349,7 @@ export const HomePage: React.FC = () => {
                                             <MainParaCard>To Email our customer service support</MainParaCard>
                                             <strong>
                                                 <MainParaCard className="has-text-left">
-                                                    Email us at: zanacapital@gmail.com
+                                                    Email us at: zanacapital@hotmail.com
                                                 </MainParaCard>
                                             </strong>
                                         </div>
