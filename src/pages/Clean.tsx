@@ -21,7 +21,54 @@ const LI = styled.li`
   font-size: 1.1rem;
   font-family: 'Open Sans', sans-serif;
 `
+const Section = styled.section`
+//   background: #003468;
+    margin-bottom: 10pm;
+    margin-top: 10pm;
+//   color: white;
+`
 
+const ServicesGet = styled.p`
+    color: #9aa8bd;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+
+  @media (max-width: 768px) { 
+      color: #9aa8bd;
+      // font-size: 1.1rem;
+      text-align: center;
+  }
+`
+const ServicesTitle = styled.p`
+  font-size: 2.6rem;
+  color: color: #08313A;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  text-align: left;
+
+  @media (max-width: 768px) { 
+    color: color: #08313A;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+	}
+`
+
+const ServicesParagraph = styled.p`
+  font-size: 1.2rem;
+  margin-top: -10px;
+  color: color: #08313A;
+  font-family: 'Open Sans', sans-serif;
+
+  @media (max-width: 768px) { 
+    text-align: center;
+    color: color: #08313A;
+    margin-top: -10px;
+    font-family: 'Open Sans', sans-serif;
+	}
+`
 
 export const Clean = () => {
     return (
@@ -34,8 +81,8 @@ export const Clean = () => {
                         <div className="column is-10 is-offset-1">
                             <div>
                                 <div className="content">
-                                <ServicesGet className="subtitle is-6 has-text-left is-uppercase" id="ourServices">Our Service</ServicesGet>
-                                <ServicesTitle className="subtitle has-text-left is-2" style={{color: "#08313A"}}>Lets Us Clean it</ServicesTitle>
+                                <ServicesGet className="subtitle is-6 has-text-lefts is-uppercase" id="ourServices">Our Service</ServicesGet>
+                                <ServicesTitle className="subtitle has-text-lefts is-2" style={{color: "#08313A"}}>Let Us Clean it</ServicesTitle>
                                 <ServicesParagraph style={{color: "#08313A"}}>We wash, sanities and dries the client bins, removing bacteria and odors, keeping them clean, dry and fragrant affordably and easily: </ServicesParagraph>
                                 <div className="columns">
                                     <div className="column is-half"></div>
@@ -73,42 +120,3 @@ export const Clean = () => {
 
 
 
-const Section = styled.section`
-//   background: #003468;
-    margin-bottom: 10pm;
-    margin-top: 10pm;
-//   color: white;
-`
-
-const ServicesGet = styled.p`
-  margin-top: 0px;
-  color: #9aa8bd;
-  font-family: 'Open Sans', sans-serif;
-`
-const ServicesTitle = styled.p`
-  font-size: 2.6rem;
-  color: color: #08313A;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 200;
-
-  @media (max-width: 768px) { 
-    color: color: #08313A;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
-    text-align: center;
-	}
-`
-
-const ServicesParagraph = styled.p`
-  font-size: 1.2rem;
-  margin-top: -10px;
-  color: color: #08313A;
-  font-family: 'Open Sans', sans-serif;
-
-  @media (max-width: 768px) { 
-    text-align: center;
-    color: color: #08313A;
-    margin-top: -10px;
-    font-family: 'Open Sans', sans-serif;
-	}
-`

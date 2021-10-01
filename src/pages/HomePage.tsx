@@ -101,6 +101,12 @@ const HeaderTitleGreen = styled.p`
   margin-top: 0px;
   color: #08313A;
   font-weight: 300;
+  text-align: left;
+
+  @media (max-width: 768px) { 
+    color: #08313A;
+    text-align: center;
+	}
 `
 const MainPara = styled.p`
   font-size: 1.2rem;
@@ -111,11 +117,22 @@ const MainParaGreen = styled.p`
   font-size: 1.2rem;
   color: #08313A;
   margin-top: -20px;
+  text-align: left;
+
+  @media (max-width: 768px) { 
+    color: #08313A;
+    text-align: center;
+	}
 `
 const MainParaCard = styled.p`
   font-size: 1.2rem;
   color: #08313A;
-//   margin-top: -20px;
+
+  @media (max-width: 768px) { 
+    color: #08313A;
+    font-size: 1.1rem;
+    text-align: center;
+	}
 `
 const AboutPara = styled.p`
   font-size: 1.2rem;
@@ -126,6 +143,13 @@ const TopPara = styled.p`
   font-size: 14px;
   letter-spacing: 1.2px;
   font-family: 'Open Sans', sans-serif;
+  text-align: left;
+
+  @media (max-width: 768px) { 
+    color: #9aa8bd;
+    // font-size: 1.1rem;
+    text-align: center;
+	}
 `
 const CardParagraph = styled.p`
   color: #08313A;
@@ -251,9 +275,9 @@ export const HomePage: React.FC = () => {
                         <div className="columns">
                             <div className="column is-10 is-offset-1">
                             <div className="content">
-                                <TopPara className="subtitle is-6 has-text-left is-uppercase">Business Overview</TopPara>
-                                <HeaderTitleGreen className="subtitle has-text-left is-2">Key Objectives</HeaderTitleGreen>
-                                <MainParaGreen className="has-text-left">
+                                <TopPara className="subtitle is-6 has-text-lefts is-uppercase">Business Overview</TopPara>
+                                <HeaderTitleGreen className="subtitle has-text-lefts is-2">Key Objectives</HeaderTitleGreen>
+                                <MainParaGreen className="has-text-lefts">
                                     The health care system in Botswana has been challenged over the past several years by the HIV/AIDS 
                                     epidemic and the re-emergence of related conditions such as tuberculosis, which has put a substantial 
                                     strain on the economy. Furthermore, the increasing incidences of non-communicable diseases, notably 
@@ -284,9 +308,9 @@ export const HomePage: React.FC = () => {
                         <div className="columns">
                             <div className="column is-10 is-offset-1">
                             <div className="content">
-                                <TopPara className="subtitle is-6 has-text-left is-uppercase">Processes</TopPara>
-                                <HeaderTitleGreen className="subtitle has-text-left ">How its done</HeaderTitleGreen>
-                                <MainParaGreen className="has-text-left">
+                                <TopPara className="subtitle is-6 has-text-lefts is-uppercase">Processes</TopPara>
+                                <HeaderTitleGreen className="subtitle has-text-lefts ">How its done</HeaderTitleGreen>
+                                <MainParaGreen className="has-text-lefts">
                                 We clean bins using the machine designed to clean them that is mounted on the trailer.  
                                 Through a combination of water under pressure and We ONLY use 100% Biodegradable chemicals 
                                 which have been approved by Environment Health Department, the patented mobile trailer is 
@@ -319,9 +343,9 @@ export const HomePage: React.FC = () => {
                         <div className="columns">
                             <div className="column is-10 is-offset-1">
                               <div className="content">
-                                  <TopPara className="subtitle is-6 has-text-left is-uppercase">Inquiry</TopPara>
-                                  <HeaderTitleGreen className="subtitle has-text-left ">Talk to our sales team</HeaderTitleGreen>
-                                  <MainParaGreen className="has-text-left">
+                                  <TopPara className="subtitle is-6 has-text-lefts is-uppercase">Inquiry</TopPara>
+                                  <HeaderTitleGreen className="subtitle has-text-lefts ">Talk to our sales team</HeaderTitleGreen>
+                                  <MainParaGreen className="has-text-lefts">
                                     For additional information or questions to clarify, our dedicated service team is here to help you. 
                                     <br />
                                     <br />
@@ -334,7 +358,7 @@ export const HomePage: React.FC = () => {
                                         <div className="content is-medium">
                                             <MainParaCard>For general booking or inquiry please call</MainParaCard>
                                             <strong>
-                                                <MainParaCard className="has-text-left">
+                                                <MainParaCard className="has-text-lefts">
                                                     Mobile number: +267 75872399 & 75034118
                                                 </MainParaCard>
                                             </strong>
@@ -348,7 +372,7 @@ export const HomePage: React.FC = () => {
                                         <div className="content is-medium">
                                             <MainParaCard>To Email our customer service support</MainParaCard>
                                             <strong>
-                                                <MainParaCard className="has-text-left">
+                                                <MainParaCard className="has-text-lefts">
                                                     Email us at: zanacapital@hotmail.com
                                                 </MainParaCard>
                                             </strong>

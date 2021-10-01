@@ -5,6 +5,19 @@ import { faGasPump,faBook } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 import { Link } from 'react-scroll'
 
+const Para = styled.p`
+    color: white;
+`
+const FooterSection = styled.footer`
+    background: #08313A;
+    color: white;
+`
+
+const Div = styled.div`
+  margin-top: 40px;
+  margin-bottom: 40px;
+`
+
 const BtmFooter: React.FC = () => {
   return (
     <FooterSection className="section footer-btm">
@@ -51,7 +64,7 @@ const BtmFooter: React.FC = () => {
                         <div className="content">
                             <div className="subtitle is-5 has-text-white">
                                 <p className="has-text-centered has-text-weight-light">
-                                    <a href="#" className="has-text-centered is-6 has-text-white" >Zana Capitals<br />Plot 54368, iTowers North, Unit 4A CBD,<br /> Gaborone, Botswana</a>
+                                    <p className="has-text-centered is-medium has-text-white is-size-6" >Zana Capitals<br />Plot 54368, iTowers North, Unit 4A CBD,<br /> Gaborone, Botswana</p>
                                 </p>
                                 <br />
                                 <br />
@@ -69,17 +82,5 @@ const BtmFooter: React.FC = () => {
     );
 }
 
-const Para = styled.p`
-    color: white;
-`
-const FooterSection = styled.footer`
-    background: #08313A;
-    color: white;
-`
-
-const Div = styled.div`
-  margin-top: 40px;
-  margin-bottom: 40px;
-`
 
 export default BtmFooter;

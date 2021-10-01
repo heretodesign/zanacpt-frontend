@@ -35,11 +35,26 @@ const MainPara = styled.p`
   color: #08313A;
   margin-top: 20px;
   font-family: 'Open Sans', sans-serif;
+  text-align: left;
+
+    @media (max-width: 768px) { 
+        color: #08313A;
+        // font-size: 1.1rem;
+        text-align: center;
+    }
 `
 const TopPara = styled.p`
-  color: #9aa8bd;
-  font-size: 14px;
-  letter-spacing: 1.2px;
+    color: #9aa8bd;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+
+  @media (max-width: 768px) { 
+      color: #9aa8bd;
+      // font-size: 1.1rem;
+      text-align: center;
+  }
 `
 
 export const Services = () => {
@@ -67,8 +82,8 @@ export const Services = () => {
                                                 </div>
 
                                                 <div className="content">
-                                                    <TopPara className="subtitle is-6 has-text-left is-uppercase">Benefit of Working with us</TopPara>
-                                                    <MainPara className="has-text-left" style={{fontStyle: 'italic'}}>
+                                                    <TopPara className="subtitle is-6 has-text-lefts is-uppercase">Benefit of Working with us</TopPara>
+                                                    <MainPara className="has-text-lefts" style={{fontStyle: 'italic'}}>
                                                         We offer the best cleaning services taylored for your specific needs at a competitive price. Our intended end result is to achieve enviromental cleanliness by eliminate 99.9% of the toxins found in bins. Our Founders Remarks
                                                     </MainPara>
                                                 </div>

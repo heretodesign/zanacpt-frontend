@@ -61,6 +61,48 @@ const BtnTextMain = styled.p`
     color: #08313A;
   }
 `
+
+const MainTitle = styled.p`
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 3.8rem;
+  font-weight: 600;
+
+  @media (max-width: 768px) { 
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+
+	}
+`
+const MainParagraph = styled.p`
+  color: #08313A;
+  font-size: 1.3rem;
+  text-align: left;
+
+  @media (max-width: 768px) { 
+    color: #08313A;
+    font-size: 1.2rem;
+    text-align: center;
+	}
+`
+const SpanColor = styled.span`
+  color: #08313A;
+  font-family: sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  text-align: left;
+
+  @media (max-width: 768px) { 
+    color: #08313A;
+    font-family: sans-serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+	}
+`
 const LinkButtonNav = styled(Link)`
   background-color: #08313A;
   color: white;
@@ -266,10 +308,8 @@ const NavbarHero: React.FC = () => {
               <div className="content">
                 <div className="columns">
                   <div className="column  is-two-thirds is-offset-1">
-                    <MainTitle className="subtitle has-text-left">
-                    </MainTitle>
-                    <MainTitle className="subtitle has-text-left">
-                      <SpanColor>Residential </SpanColor><br /><SpanColor>& Commercial Sanitizing</SpanColor> 
+                    <MainTitle className="subtitle has-text-lefts">
+                      <SpanColor>Residential &<br /> Commercial Sanitizing</SpanColor> 
                     </MainTitle>
                   </div>
                 </div>
@@ -303,47 +343,6 @@ const NavbarHero: React.FC = () => {
   );
 }
 
-
-const MainTitle = styled.p`
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 3.8rem;
-  font-weight: 600;
-
-  @media (max-width: 768px) { 
-    color: #fff;
-    font-family: sans-serif;
-    font-size: 2.4rem;
-    font-weight: 500;
-    text-align: center;
-
-	}
-`
-const MainParagraph = styled.p`
-  color: #08313A;
-  font-size: 1.3rem;
-  text-align: left;
-
-  @media (max-width: 768px) { 
-    color: #08313A;
-    font-size: 1.2rem;
-    text-align: center;
-	}
-`
-const SpanColor = styled.span`
-  color: #08313A;
-  font-family: sans-serif;
-  font-size: 4rem;
-  font-weight: 600;
-
-  @media (max-width: 768px) { 
-    color: #08313A;
-    font-family: sans-serif;
-    font-size: 2.4rem;
-    font-weight: 500;
-    text-align: center;
-	}
-`
 
 
 

@@ -37,6 +37,13 @@ const TopPara = styled.p`
   font-size: 14px;
   letter-spacing: 1.2px;
   font-family: 'Open Sans', sans-serif;
+  text-align: left;
+
+    @media (max-width: 768px) { 
+        color: #9aa8bd;
+        // font-size: 1.1rem;
+        text-align: center;
+    }
 `
 // const ServicesTitle = styled.p`
 //   font-size: 2.6rem;
@@ -57,7 +64,7 @@ const ServicesTitle = styled.p`
   color: #08313A;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 1em;
-
+  text-align: left;
 
   @media (max-width: 768px) { 
     color: #08313A;
@@ -72,12 +79,16 @@ const ServicesParagraph = styled.p`
   font-size: 1.2rem;
   color: #08313A;
   font-family: 'Open Sans', sans-serif;
+  text-align: left;
 
   @media (max-width: 768px) { 
     text-align: center;
     color: #08313A;
     font-family: 'Open Sans', sans-serif;
-	}
+    text-align: center;
+    }
+    
+    
 `
 
 export const Faq = () => {
@@ -90,25 +101,25 @@ export const Faq = () => {
                         <div className="columns">
                             <div className="column is-10 is-offset-1">
                                 <div className="content">
-                                    <TopPara className="subtitle is-6 has-text-left is-uppercase" id="headTitle">Questions</TopPara>
-                                    <ServicesTitle className="subtitle has-text-left is-2">Frequently Asked Questions</ServicesTitle>
+                                    <TopPara className="subtitle is-6 has-text-lefts is-uppercase" id="headTitle">Questions</TopPara>
+                                    <ServicesTitle className="subtitle has-text-lefts is-2">Frequently Asked Questions</ServicesTitle>
                                     
                                     <FQATitle className="titles" style={{fontWeight: 600}}>How long does the virus that causes COVID-19 last on surfaces?</FQATitle>
-                                    <ServicesParagraph className="has-text-left">
+                                    <ServicesParagraph className="has-text-lefts">
                                         Recent research evaluated the survival of the COVID-19 virus on different surfaces and reported that the virus 
                                         can remain viable for up to 72 hours on plastic and stainless steel, up to four hours on copper, and up 
                                         to 24 hours on cardboard.07 Apr 2020.
                                     </ServicesParagraph>
                                     <br />
                                     <FQATitle className="titles" style={{fontWeight: 600}}>Can COVID-19 be transmitted through food?</FQATitle>
-                                    <ServicesParagraph className="has-text-left">
+                                    <ServicesParagraph className="has-text-lefts">
                                         There is currently no evidence that people can catch COVID-19 from food. The virus that causes COVID-19 can be 
                                         killed at temperatures similar to that of other known viruses and bacteria found in food.14 Aug 2020
                                     <br />
                                     </ServicesParagraph>
                                     <br />
                                     <FQATitle className="titles" style={{fontWeight: 600}}>What all is included in your service?</FQATitle>
-                                    <ServicesParagraph className="has-text-left">
+                                    <ServicesParagraph className="has-text-lefts">
                                         We will arrive at your home we will be equipped with all the cleaning supplies and equipment needed to thoroughly clean your home.
                                     </ServicesParagraph>
                                 </div>
