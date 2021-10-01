@@ -15,11 +15,11 @@ export function SideBar({ props }: any) {
     <>
       <Menu {...props} right>
         <Link className="navbar-item"
-          to="whoWeAre" spy={true} smooth={true}>
+          to="whoWeAre" spy={true} smooth={true}> 
           Who we are
         </Link>
         <Link className="navbar-item"
-          to="whoWeAre" spy={true} smooth={true}>
+          to="whatWeDo" spy={true} smooth={true}>
           What we do
         </Link>
         <Link className="navbar-item"

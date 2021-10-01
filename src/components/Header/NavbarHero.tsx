@@ -33,6 +33,12 @@ const LinkButton = styled(Link)`
   border-color: #08313A;
   border-width: 2px;
 
+  &:hover {
+    color: #08313A;
+    border-color: #08313A;
+    background-color: white;
+  }
+
   @include tablet {
     font-size: 1.2rem;
     margin-top: 1px;
@@ -47,11 +53,12 @@ const LinkButton = styled(Link)`
     font-size: 1rem;
     margin-top: 1px;
   }
+`
+const BtnTextMain = styled.p`
+  color: white;
 
-  &:hover {
+  ${LinkButton}:hover & {
     color: #08313A;
-    border-color: #08313A;
-    background-color: white;
   }
 `
 const LinkButtonNav = styled(Link)`
@@ -183,12 +190,12 @@ const NavbarHero: React.FC = () => {
   return (
     <>
       <Section className="hero is-primary is-medium imgLanding">
-        <div className="is-paddingless-horizontal topNav">
+        <div className="is-paddingless-horizontal topNav"> 
             <div className="container-fluid grid">
                 <TopDiv className="devsection">
                     <TopPara className="subtitl is-5 has-text-centered isdata">
-                      <strong className="has-text-white">Zana Capital</strong> – Together we can make our cities cleaner.
-                      –– +267 71572088 
+                        Together we can make our cities cleaner. Call
+                      –– <strong className="has-text-white">+267 75872399 & 75034118 </strong> now.
                     </TopPara>
                 </TopDiv>
             </div>
@@ -282,7 +289,9 @@ const NavbarHero: React.FC = () => {
               <div className="content" id="landingForm">
                 <div className="columns">
                   <div className="column  is-two-fifths is-offset-1">
-                    <LinkButton to="contactUsNow" spy={true} smooth={true}  className="button is-medium has-test-small is-fullwidth">Talk to our sales team</LinkButton>
+                    <LinkButton to="contactUsNow" spy={true} smooth={true}  className="button is-medium has-test-small is-fullwidth">
+                      <BtnTextMain>Talk to our sales team</BtnTextMain>
+                    </LinkButton>
                   </div>
                 </div>
               </div>
