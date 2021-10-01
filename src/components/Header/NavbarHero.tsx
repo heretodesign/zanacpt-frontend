@@ -308,8 +308,8 @@ const NavbarHero: React.FC = () => {
               <div className="content">
                 <div className="columns">
                   <div className="column  is-two-thirds is-offset-1">
-                    <MainTitle className="subtitle has-text-lefts">
-                      <SpanColor>Residential &<br /> Commercial Sanitizing</SpanColor> 
+                    <MainTitle className="title has-text-lefts">
+                      <SpanColor>Residential & Commercial Sanitizing</SpanColor> 
                     </MainTitle>
                   </div>
                 </div>
