@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect } from 'react'
 import Header from '../components/Header/Header'
 import 'react-bulma-components'
 import { Link } from "react-router-dom"
@@ -10,11 +11,11 @@ import { Faq } from './Faq'
 import { Clean } from './Clean' 
 import { Services } from './Services' 
 import { Serv } from './Serv' 
-import  bins  from '../images/gary-chan-YzSZN3qvHeo-unsplash.jpg'
-import  bin  from '../images/pexels-vladislav-vasnetsov-2682683.jpg'
 import  residenc  from '../images/mitchell-luo-UBU_pM78yxQ-unsplash.jpg'
 import  governemn  from '../images/kinga-kolodziejska-MEGB-u82JnU-unsplash.jpg'
 import  comm  from '../images/pexels-vladislav-vasnetsov-2682683.jpg'
+import { MobileNav } from '../components/Header/MobileNav'
+import { NavbarContext } from '../context/NavbarContext'
 
 
 const Section = styled.section`
@@ -24,13 +25,11 @@ const Section = styled.section`
 const DIV = styled.div`
     padding-bottom: 50px;
 `
-
 const P = styled.p`
   color: #08313A;
   background: white;
   font-size: 1.4rem;
 `
-
 const LinkBtn = styled(Link)`
   color: #08313A;
   background: white;
@@ -81,15 +80,12 @@ const cardTitle = {
     textAlign: 'center',
     marginBottom: '10px'
 }
-
-
 const CardSection = styled.section`
   // background-color: #f1f6fe;
   background-color: #e3f4fc;
   card-color: transparent;
   color: #08313A;
 `
-
 const HeaderTitle = styled.p`
   font-size: 2.6rem;
   margin-top: 0px;
@@ -181,10 +177,45 @@ const CardParagraphs = styled.p`
     margin-bottom: 10px;
 	}
 `
-export const HomePage: React.FC = () => {
+export const HomePage = () => {
+
+    const checkBrowser = () => {
+        if (navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR") !== -1) {
+            return "Opera"
+        } else if (navigator.userAgent.indexOf("Chrome") !== -1) {
+            return "Chrome"
+        } else if (navigator.userAgent.indexOf("Safari") !== -1) {
+            return "Safari"
+        } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
+            return "Firefox"
+        }
+         else {
+            return "unknown"
+        }
+    }
+
+    React.useEffect(() => {
+        let browser = checkBrowser()
+        if (browser !== "Firefox" && browser !== "unknown") {
+            let sheet = document.createElement("style")
+            sheet.innerHTML = "html { scroll-behavior: smooth; }";
+            document.body.appendChild(sheet)
+        }
+    }, [])
+
+    const { width, height, setWidth, setHeight, onResize, setIsMobile, handleIsMobile } = React.useContext(NavbarContext)
+    window.onresize = onResize;
+
+    
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+            // handleIsMobile()
+    }, [width])
+
     return (
         <>
-            <NavbarHero />
+            <MobileNav />
+            {/* {width < 768 ? <MobileNav /> : <NavbarHero />} */}
             <section className="section is-paddingless-horizontal" id="whoWeAre">
                 <br />
                 <br />
@@ -373,7 +404,7 @@ export const HomePage: React.FC = () => {
                                             <MainParaCard>To Email our customer service support</MainParaCard>
                                             <strong>
                                                 <MainParaCard className="has-text-lefts">
-                                                    Email us at: zanacapital@hotmail.com
+                                                    Email us at: zanacapital15@gmail.com
                                                 </MainParaCard>
                                             </strong>
                                         </div>

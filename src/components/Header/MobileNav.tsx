@@ -228,7 +228,7 @@ const NAV = styled.nav`
 const IMG = styled.img`
   min-height: 3.25rem
 `
-const NavbarHero: React.FC = () => {
+export const MobileNav: React.FC = () => {
   return (
     <>
       <Section className="hero is-primary is-medium imgLanding">
@@ -252,7 +252,7 @@ const NavbarHero: React.FC = () => {
                     <IMG src={logo} />
                   {/* <strong className="has-text-bold is-2">Zana Capitals</strong> */}
                 </LinkNavs>
-                {/* <SideBar pageWrapId={'page-wrap'} otherContainer={'outer-container'} /> */}
+                <SideBar pageWrapId={'page-wrap'} otherContainer={'outer-container'} />
                 {/* { window.innerWidth > 100 || window.innerWidth <= 700 ? <SideBar pageWrapId={'page-wrap'} otherContainer={'outer-container'} /> : '' } */}
                 
 
@@ -263,7 +263,7 @@ const NavbarHero: React.FC = () => {
                 </button> */}
               </div>
               <NavSection id="navbarMenuHeroA" className="navbar-menu">
-                <div className="navbar-end">
+                {/* <div className="navbar-end">
                   <LinkContact 
                       to="whoWeAre" spy={true} smooth={true}
                       className="navbar-item has-text-weight-bold" 
@@ -296,7 +296,7 @@ const NavbarHero: React.FC = () => {
                           Contact us
                       </LinkButtonNav>
                   </span>
-                </div>
+                </div> */}
               </NavSection>
             </div>
           </NAV>
@@ -346,4 +346,3 @@ const NavbarHero: React.FC = () => {
 
 
 
-export default NavbarHero;
