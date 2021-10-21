@@ -16,6 +16,7 @@ import  governemn  from '../images/kinga-kolodziejska-MEGB-u82JnU-unsplash.jpg'
 import  comm  from '../images/pexels-vladislav-vasnetsov-2682683.jpg'
 import { MobileNav } from '../components/Header/MobileNav'
 import { NavbarContext } from '../context/NavbarContext'
+import { useWindowResize } from '../customHook'
 
 
 const Section = styled.section`
@@ -178,6 +179,7 @@ const CardParagraphs = styled.p`
 	}
 `
 export const HomePage = () => {
+  const { width, hamburgerActive, previousURL } = React.useContext(NavbarContext)
 
     const checkBrowser = () => {
         if (navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR") !== -1) {
@@ -202,20 +204,12 @@ export const HomePage = () => {
             document.body.appendChild(sheet)
         }
     }, [])
-
-    const { width, height, setWidth, setHeight, onResize, setIsMobile, handleIsMobile } = React.useContext(NavbarContext)
-    window.onresize = onResize;
-
     
-    useEffect(() => {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-            // handleIsMobile()
-    }, [width])
+    useEffect(() => {}, [width]);
 
     return (
         <>
-            <MobileNav />
-            {/* {width < 768 ? <MobileNav /> : <NavbarHero />} */}
+            {width  < 1024 ? <MobileNav /> : <NavbarHero />}
             <section className="section is-paddingless-horizontal" id="whoWeAre">
                 <br />
                 <br />

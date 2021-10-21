@@ -1,34 +1,54 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import React, { FC, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { NavbarContextProps, NavbarContext } from './NavbarContext'
+import { useWindowResize } from '../customHook'
 
 export interface NavbarProps {
     children: ReactNode;
 }
 
-export const NavbarProvider: FC<NavbarProps> = ({ children }: NavbarProps) => {
-    const [width, setWidth] = React.useState(window.innerWidth)
+export const NavbarProvider = (props: any) => {
+    const [selected, setSelected] = React.useState<number[]>([])
+    const [title, setTitle] = React.useState<string[]>([])
+    const [previousURL, setPreviousURL] = React.useState<string>('wefwqefqwefqwe')
     const [height, setHeight] = React.useState(window.innerHeight)
     const [isMobile, setIsMobile] = React.useState<boolean>(false)
+    const [hamburgerActive, setHamburgerActive] = React.useState<boolean>(false)
+    const getWidth = () => window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    const [width, setWidth] = React.useState(getWidth())
+    
+    const size = useWindowResize()
 
-    const onResize = () => {
-        setWidth(window.innerWidth)
-        setHeight(window.innerHeight)
-    }
-
-    const handleIsMobile = React.useCallback(() => {
+    const handleIsMobile = () => {
         console.log(width)
-        if (width < 764) {
+        if (size[0] < 1024) {
             setIsMobile(true)
         } else {
             setIsMobile(false)
         }
-    }, [])
+        setWidth(size[0])
+    }
 
-    let providerValue: NavbarContextProps = { height, setHeight, width, setWidth, isMobile, setIsMobile, onResize, handleIsMobile }
+    const handleMobileMenu = () => {
+        !hamburgerActive 
+            ? document.body.classList.add("no-scroll") 
+            :  document.body.classList.remove("no-scroll")
+        setHamburgerActive(!hamburgerActive)
+    }
 
-    return <NavbarContext.Provider value={providerValue}>{children}</NavbarContext.Provider>
+    React.useEffect(() => {
+        handleIsMobile()
+    }, [size])
+
+    let providerValue: NavbarContextProps = { 
+        height, 
+        setHeight, 
+        width, 
+        setWidth, 
+        isMobile, 
+        setIsMobile, 
+        handleIsMobile,
+        title, setTitle, selected, setSelected, previousURL, setPreviousURL, handleMobileMenu, hamburgerActive
+    }
+
+    return <NavbarContext.Provider value={providerValue}>{props.children}</NavbarContext.Provider>
 }
-
-export default NavbarProvider
