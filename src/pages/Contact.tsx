@@ -4,26 +4,219 @@ import 'react-bulma-components'
 import { Link } from "react-router-dom"
 import styled from 'styled-components'
 import Navbar from '../components/Header/Navbar'
+import emailjs, { send } from 'emailjs-com';
+
+const InputBtn = styled.button`
+    background: #08313A;
+    color: white;
+    margin-top: 20px;
+
+    &:hover {
+        color: #08313A;
+        background: white;
+        border-color: #08313A;
+        border-width: 2px;
+        box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+    }
+`
+
+const Input = styled.input`
+  color: #08313A;
+  background-color: #eff6fc;
+  border-width: 1.5px;
+  border-color: transparent;
+
+  &:hover {
+    border-color: #7CB7AF;
+    border-width: 2px;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  }
+`
+const Textarea = styled.textarea`
+  color: #08313A;
+  background-color: #eff6fc;
+  border-width: 1.5px;
+  border-color: transparent;
+
+  &:hover {
+    border-color: #7CB7AF;
+    border-width: 2px;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  }
+`
 
 export const Contact = () => {
+    const formRef = React.useRef()
+    const [toSend, setToSend] = React.useState({
+        fullname: '',
+        company: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+    })
+    const [isSent, setIsSent] = React.useState(false)
+
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+
+        let templateParams = {
+            fullname: toSend.fullname,
+            company: toSend.company,
+            email: toSend.email,
+            phone: toSend.phone,
+            subject: toSend.subject,
+            message: toSend.message,
+        }
+        send(
+            'service_kjgi7co', 
+            'template_jiik8c7',
+            templateParams,
+            'user_tbbezz2rmbnW2ZkvAoygK'
+        ).then((response) => {
+            console.log("EMAIL SUCCESSFUL", response.status, response.text);
+            if (response.status == 200 || response.text == "OK") {
+                setIsSent(true)
+                setTimeout(() => {
+                    setToSend({
+                        fullname: '',
+                        company: '',
+                        email: '',
+                        phone: '',
+                        subject: '',
+                        message: '',
+                    })
+                }, 3000);
+            }
+        }).catch((error) => {
+            console.log("EMAIL FAILED", error);
+            setIsSent(false)
+        });
+    }
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+        setToSend({ ...toSend, [e.target.name]: e.target.value })
+    }
+
+
     return (
         <>
-          <Navbar />
-            <section className="section is-paddingless-horizontal">
+            <section className="form is-paddingless-horizontal">
                 <div className="container grid is-large">
                     <div className="firstsections">
                         <div className="content">
                         <div className="columns">
-                            <div className="column">
-                            <div className="content">
-                                <TopPara className="subtitle is-6 has-text-left is-uppercase">Why we exist</TopPara>
-                                <HeaderTitle className="subtitle has-text-left is-2">About Us</HeaderTitle>
-                                <MainPara className="has-text-left has-text-black">
-                                    Seth Resources (Pty) Ltd, is a Botswana company founded in 2015; The company is incorporated under Botswana Law (100% citizen owned), to offer customers the widest range of services 
-                                    in respect of Procurement and Logistics of Oil & gas Derivatives including the storage, 
-                                    handling and distribution (Transportation) of various products according to the needs of the users and also expands the activities out of Botswana boundaries. 
-                                </MainPara>
-                            </div>
+                            <div className="column is-8 is-offset-2">
+                                <div className="content">
+                                    {/* <TopPara className="subtitle is-6 has-text-left is-uppercase">Why we exist</TopPara>
+                                    <HeaderTitle className="subtitle has-text-left is-2">About Us</HeaderTitle> */}
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="field is-horizontal">
+                                            <div className="field-body">
+                                            <div className="field">
+                                                <Input 
+                                                    className="input" 
+                                                    type="text" 
+                                                    placeholder="Fullname*" 
+                                                    name="fullname"
+                                                    value={toSend.fullname} 
+                                                    onChange={handleChange}
+                                                />
+                                            </div>
+                                            <div className="field">
+                                                <Input 
+                                                    className="input" 
+                                                    type="text" 
+                                                    placeholder="Organisation / Company" 
+                                                    name="company"
+                                                    value={toSend.company}
+                                                    onChange={handleChange}
+                                                />
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div className="field is-horizontal">
+                                            <div className="field-body">
+                                            <div className="field">
+                                                <Input 
+                                                    className="input" 
+                                                    type="text" 
+                                                    placeholder="Phone*" 
+                                                    name="phone"
+                                                    value={toSend.phone}
+                                                    onChange={handleChange}
+                                                />
+                                            </div>
+                                            <div className="field">
+                                                <Input 
+                                                    className="input" 
+                                                    type="email" 
+                                                    placeholder="Email" 
+                                                    name="email"
+                                                    value={toSend.email}
+                                                    onChange={handleChange}
+                                                />
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="field is-horizontal">
+                                            <div className="field-body">
+                                            <div className="field">
+                                                <Input 
+                                                    className="input input-shadow grey-darker" 
+                                                    type="text" 
+                                                    placeholder="Subject*" 
+                                                    name="subject"
+                                                    value={toSend.subject}
+                                                    onChange={handleChange}
+                                                />
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="field is-horizontal">
+                                            <div className="field-body">
+                                            <div className="field">
+                                                <div className="control">
+                                                    <Textarea 
+                                                        className="textarea $input-shadow grey-darker" 
+                                                        placeholder="Details*" 
+                                                        name="message"
+                                                        value={toSend.message}
+                                                        onChange={handleChange}></Textarea>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="field is-horizontal">
+                                            <div className="field-body">
+                                            <div className="field">
+                                                <div className="control">
+                                                <InputBtn className="button is-fullwidth" type="submit">
+                                                    Send message
+                                                </InputBtn>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        {isSent == true 
+                                            ? (<div className="field is-horizontal">
+                                                <div className="field-body">
+                                                <div className="field">
+                                                    <div className="control">
+                                                    <InputBtn className="button is-fullwidth has-background-success is-success">
+                                                        Email sent Succefully! Our Admin Team will reach out to you soonest.
+                                                    </InputBtn>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>)
+                                            : null
+                                        }
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         </div>
@@ -35,103 +228,10 @@ export const Contact = () => {
 }
 
 
-
-const Section = styled.section`
-  background: #003468;
-  color: white;
-`
-
-const P = styled.p`
-  color: #003468;
-  background: white;
-  font-size: 1.4rem;
-`
-
-const LinkBtn = styled(Link)`
-  color: #003468;
-  background: white;
-
-  @include tablet {
-    font-size: 1.2rem;
-    margin-top: 1px;
-    background: #fba502;
-  }
-	@media (max-width: 768px) { 
-		width: 450px; 
-		padding: 10px;
-	}
-
-  @include phone {
-    font-size: 1rem;
-    margin-top: 1px;
-  }
-
-  // &:hover {
-  //   background-color: #003468;
-  //   color: white;
-  // }
-`
-const TextPara = styled.p`
-  font-size: 1.2rem;
-  color: #003468;
-`
-const Button = styled.button`
-  color: #003468;
-  text-decoration: underline;
-  text-align: center;
-  margin-bottom: 10px;
-
-  // :hover: {
-  //   color: #fba502
-  // }
-`
-const cardTitle = {
-    color: '#003468',
-    textDecoration: 'underline',
-    textAlign: 'center',
-    marginBottom: '10px'
-  }
-  const AboutRoles = {
-    color: '#003468',
-    fontSize: '1rem',
-    textAlign: 'center',
-    marginBottom: '10px'
-}
-
-
-const CardSection = styled.section`
-  // background-color: #f1f6fe;
-  background-color: #e3f4fc;
-  card-color: transparent;
-  color: #003468;
-`
-
 const HeaderTitle = styled.p`
   font-size: 2.6rem;
   margin-top: 0px;
-  color: #fff;
-`
-const MainPara = styled.p`
-  font-size: 1.2rem;
-  color: #fff;
-  margin-top: -20px;
-`
-const AboutPara = styled.p`
-  font-size: 1.2rem;
   color: #003468;
 `
-const TopPara = styled.p`
-  color: #9aa8bd;
-  font-size: 14px;
-  letter-spacing: 1.2px;
-`
-const CardParagraph = styled.p`
-  color: #003468;
-  text-align: left;
-  font-size: 1.1rem;
-  margin-top: 15px;
-`
-
-
 
 export default Contact

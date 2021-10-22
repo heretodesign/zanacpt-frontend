@@ -16,7 +16,7 @@ import  governemn  from '../images/kinga-kolodziejska-MEGB-u82JnU-unsplash.jpg'
 import  comm  from '../images/pexels-vladislav-vasnetsov-2682683.jpg'
 import { MobileNav } from '../components/Header/MobileNav'
 import { NavbarContext } from '../context/NavbarContext'
-import { useWindowResize } from '../customHook'
+import { Contact } from './Contact'
 
 
 const Section = styled.section`
@@ -69,18 +69,7 @@ const Button = styled.button`
   //   color: #fba502
   // }
 `
-const cardTitle = {
-    color: '#08313A',
-    textDecoration: 'underline',
-    textAlign: 'center',
-    marginBottom: '10px'
-  }
-  const AboutRoles = {
-    color: '#08313A',
-    fontSize: '1rem',
-    textAlign: 'center',
-    marginBottom: '10px'
-}
+
 const CardSection = styled.section`
   // background-color: #f1f6fe;
   background-color: #e3f4fc;
@@ -125,6 +114,8 @@ const MainParaCard = styled.p`
   font-size: 1.2rem;
   color: #08313A;
 
+  
+
   @media (max-width: 768px) { 
     color: #08313A;
     font-size: 1.1rem;
@@ -157,6 +148,18 @@ const CardParagraph = styled.p`
 const CardDiv = styled.div`
   border-style: outset;
   border-bottom-color: #041B61;
+`
+const CardDivs = styled.div`
+  border-bottom-color: white;
+  max-width: 100%;
+
+  &:hover {
+    border-bottom: groove;
+    max-width: 100%;
+    border-color: #7CB7AF;
+    border-width: 3px;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  }
 `
 const ParagraphSty = styled.p`
   color: #08313A;
@@ -220,7 +223,7 @@ export const HomePage = () => {
                             <div className="column is-3 is-offset-1">
                               <div className="content">
                                 <div className="has-text-left">
-                                  <div className="card">
+                                  <CardDivs className="card">
                                       <div className="card-image">
                                           <img src={comm} alt="Placeholder image" />
                                       </div>
@@ -236,14 +239,14 @@ export const HomePage = () => {
                                           <br />
                                         </MainParaCard>
                                       </div>
-                                    </div>
+                                    </CardDivs>
                                 </div>
                               </div>
                             </div>
                             <div className="column is-4">
                               <div className="content">
                                 <div className="has-text-left">
-                                  <div className="card">
+                                  <CardDivs className="card">
                                       <div className="card-image">
                                           <img src={governemn} alt="Placeholder image" />
                                       </div>
@@ -259,7 +262,7 @@ export const HomePage = () => {
                                           <br />
                                         </MainParaCard>
                                       </div>
-                                    </div>
+                                    </CardDivs>
                                 </div>
                               </div>
                             </div>
@@ -267,7 +270,7 @@ export const HomePage = () => {
                             <div className="column is-3">
                               <div className="content">
                                 <div className="has-text-left">
-                                  <div className="card">
+                                  <CardDivs className="card">
                                       <div className="card-image">
                                           <img src={residenc} alt="Placeholder image" />
                                       </div>
@@ -283,7 +286,7 @@ export const HomePage = () => {
                                           <br />
                                         </MainParaCard>
                                       </div>
-                                    </div>
+                                    </CardDivs>
                                 </div>
                               </div>
                             </div>
@@ -371,7 +374,7 @@ export const HomePage = () => {
                                   <TopPara className="subtitle is-6 has-text-lefts is-uppercase">Inquiry</TopPara>
                                   <HeaderTitleGreen className="subtitle has-text-lefts ">Talk to our sales team</HeaderTitleGreen>
                                   <MainParaGreen className="has-text-lefts">
-                                    For additional information or questions to clarify, our dedicated service team is here to help you. 
+                                    For additional information or questions to clarify, our dedicated sales team is here to help you. 
                                     <br />
                                     <br />
                                   </MainParaGreen>
@@ -395,7 +398,7 @@ export const HomePage = () => {
                                     <div className="card">
                                       <div className="card-content">
                                         <div className="content is-medium">
-                                            <MainParaCard>To Email our customer service support</MainParaCard>
+                                            <MainParaCard>Alternatively, fill the form below or</MainParaCard>
                                             <strong>
                                                 <MainParaCard className="has-text-lefts">
                                                     Email us at: zanacapital15@gmail.com
@@ -412,7 +415,8 @@ export const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <Services />
+            <Contact />
+            {/* <Services /> */}
             <CustomSpacer />
         </>
     )

@@ -231,7 +231,7 @@ const IMG = styled.img`
 const NavbarHero: React.FC = () => {
   return (
     <>
-      <Section className="hero is-primary is-medium imgLanding">
+      <Section className="hero is-medium imgLanding">
         <div className="is-paddingless-horizontal topNav"> 
             <div className="container-fluid grid">
                 <TopDiv className="devsection">
@@ -250,17 +250,7 @@ const NavbarHero: React.FC = () => {
                   to="/"
                   >
                     <IMG src={logo} />
-                  {/* <strong className="has-text-bold is-2">Zana Capitals</strong> */}
                 </LinkNavs>
-                {/* <SideBar pageWrapId={'page-wrap'} otherContainer={'outer-container'} /> */}
-                {/* { window.innerWidth > 100 || window.innerWidth <= 700 ? <SideBar pageWrapId={'page-wrap'} otherContainer={'outer-container'} /> : '' } */}
-                
-
-                {/* <button onClick={() => console.log('ussss')} className="navbar-burger burger" data-target="navbarMenuHeroA">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button> */}
               </div>
               <NavSection id="navbarMenuHeroA" className="navbar-menu">
                 <div className="navbar-end">
@@ -289,12 +279,12 @@ const NavbarHero: React.FC = () => {
                       FAQs
                   </LinkContact>
                   <span className="navbar-item">
-                      <LinkButtonNav 
+                      <LinkButton 
                           to="contactUsNow" spy={true} smooth={true} 
                           className="navbar-item button is-fullwidth has-text-weight-bold" 
                           >
-                          Contact us
-                      </LinkButtonNav>
+                          <BtnTextMain>Contact us</BtnTextMain>
+                      </LinkButton>
                   </span>
                 </div>
               </NavSection>
