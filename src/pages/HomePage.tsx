@@ -295,7 +295,7 @@ export const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <section className="section is-paddingless-horizontal">
+            <section className=" is-paddingless-horizontal">
                 <br />
                 <div className="container grid is-large">
                     <div className="firstsections">
@@ -364,7 +364,7 @@ export const HomePage = () => {
             <Clean />
             <Faq />
             
-            <section className="section is-paddingless-horizontal" id="contactUsNow">
+            <section className=" is-paddingless-horizontal" id="contactUsNow">
                 <div className="container grid is-large">
                     <div className="firstsections">
                         <div className="content">
@@ -415,6 +415,7 @@ export const HomePage = () => {
                     </div>
                 </div>
             </section>
+            <CustomSpacer />
             <Contact />
             {/* <Services /> */}
             <CustomSpacer />

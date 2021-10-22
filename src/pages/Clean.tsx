@@ -73,7 +73,7 @@ const ServicesParagraph = styled.p`
 export const Clean = () => {
     return (
         <>
-            <Section className="section is-paddingless-horizontal" id="servicesPage">
+            <Section className=" is-paddingless-horizontal" id="servicesPage">
                 <div className="container grid is-large" id="contAboutPage">
                 <div className="firstssection">
                     <div className="content">
