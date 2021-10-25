@@ -181,6 +181,9 @@ const CardParagraphs = styled.p`
     margin-bottom: 10px;
 	}
 `
+const SectionDiv = styled.section`
+    padding: 0rem 1.5rem;
+`
 export const HomePage = () => {
   const { width, hamburgerActive, previousURL } = React.useContext(NavbarContext)
 
@@ -295,7 +298,7 @@ export const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <section className=" is-paddingless-horizontal">
+            <SectionDiv className=" is-paddingless-horizontal">
                 <br />
                 <div className="container grid is-large">
                     <div className="firstsections">
@@ -325,7 +328,7 @@ export const HomePage = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </SectionDiv>
             
             {/* <Next /> */}
 
@@ -364,7 +367,7 @@ export const HomePage = () => {
             <Clean />
             <Faq />
             
-            <section className=" is-paddingless-horizontal" id="contactUsNow">
+            <SectionDiv className=" is-paddingless-horizontal" id="contactUsNow">
                 <div className="container grid is-large">
                     <div className="firstsections">
                         <div className="content">
@@ -414,7 +417,7 @@ export const HomePage = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </SectionDiv>
             <CustomSpacer />
             <Contact />
             {/* <Services /> */}

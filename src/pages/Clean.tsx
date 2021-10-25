@@ -25,6 +25,7 @@ const Section = styled.section`
 //   background: #003468;
     margin-bottom: 10pm;
     margin-top: 10pm;
+    padding: 0rem 1.5rem;
 //   color: white;
 `
 
@@ -70,6 +71,7 @@ const ServicesParagraph = styled.p`
 	}
 `
 
+
 export const Clean = () => {
     return (
         <>
@@ -91,7 +93,7 @@ export const Clean = () => {
 
                                 <FQATitle style={{color: "#08313A"}}>Reasons why you should clean your bins:</FQATitle>
                                 <ul>
-                                    <LI>Eliminate Bad Odor – With all the rotting food, used sanitary musks , disposable diapers, and This can make your trash can smell even when it is empty. 
+                                    <LI>Eliminate Bad Odor – With all the rotting food, used sanitary musks, disposable diapers, and This can make your trash can smell even when it is empty. 
                                         Cleaning bins must be done at least once in a week to get rid of bad  odor. </LI>
                                     <LI>Eliminate Germs – Throwing away old food, and used diapers can infect your trash can with germs and diseases, such as Salmonella, Listeria, and E-Coli.
                                         Sanitizing your trash bins will kill these germs, and help keep you and your family safe. </LI>

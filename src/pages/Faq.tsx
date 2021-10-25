@@ -21,10 +21,8 @@ const DIV = styled.div`
 `
 
 const Section = styled.section`
-//   background: #08313A;
     margin-bottom: 10pm;
     margin-top: 10pm;
-//   color: white;
 `
 
 const ServicesGet = styled.p`
@@ -45,19 +43,6 @@ const TopPara = styled.p`
         text-align: center;
     }
 `
-// const ServicesTitle = styled.p`
-//   font-size: 2.6rem;
-//   color: color: #08313A;
-//   font-family: 'Open Sans', sans-serif;
-//   font-weight: 200;
-
-//   @media (max-width: 768px) { 
-//     color: color: #08313A;
-//     font-family: 'Open Sans', sans-serif;
-//     font-size: 2rem;
-//     text-align: center;
-// 	}
-// `
 const ServicesTitle = styled.p`
   font-size: 2.6rem;
   font-weight: 200;
@@ -74,7 +59,6 @@ const ServicesTitle = styled.p`
     margin-bottom: 1em;
 	}
 `
-
 const ServicesParagraph = styled.p`
   font-size: 1.2rem;
   color: #08313A;
@@ -87,8 +71,6 @@ const ServicesParagraph = styled.p`
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     }
-    
-    
 `
 
 export const Faq = () => {

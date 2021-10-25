@@ -3,7 +3,6 @@ import 'bulma/css/bulma.min.css';
 import 'react-bulma-components'
 import { Link } from "react-router-dom"
 import styled from 'styled-components'
-import Navbar from '../components/Header/Navbar'
 import emailjs, { send } from 'emailjs-com';
 
 const InputBtn = styled.button`
@@ -44,7 +43,14 @@ const Textarea = styled.textarea`
     box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
   }
 `
-
+const Div = styled.div`
+    @media (max-width: 768px) { 
+        // padding: 3rem 1.5rem;
+    }
+`
+const Section = styled.section`
+    padding: 0rem 1.5rem;
+`
 export const Contact = () => {
     const formRef = React.useRef()
     const [toSend, setToSend] = React.useState({
@@ -101,15 +107,13 @@ export const Contact = () => {
 
     return (
         <>
-            <section className="form is-paddingless-horizontal">
+            <Section className="form is-paddingless-horizontal">
                 <div className="container grid is-large">
                     <div className="firstsections">
                         <div className="content">
                         <div className="columns">
                             <div className="column is-8 is-offset-2">
-                                <div className="content">
-                                    {/* <TopPara className="subtitle is-6 has-text-left is-uppercase">Why we exist</TopPara>
-                                    <HeaderTitle className="subtitle has-text-left is-2">About Us</HeaderTitle> */}
+                                <Div className="content">
                                     <form onSubmit={handleSubmit}>
                                         <div className="field is-horizontal">
                                             <div className="field-body">
@@ -216,22 +220,15 @@ export const Contact = () => {
                                             : null
                                         }
                                     </form>
-                                </div>
+                                </Div>
                             </div>
                         </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
         </>
     )
 }
-
-
-const HeaderTitle = styled.p`
-  font-size: 2.6rem;
-  margin-top: 0px;
-  color: #003468;
-`
 
 export default Contact
