@@ -11,8 +11,10 @@ import { Faq } from './Faq'
 import { Clean } from './Clean' 
 import { Services } from './Services' 
 import { Serv } from './Serv' 
-import  residenc  from '../images/mitchell-luo-UBU_pM78yxQ-unsplash.jpg'
-import  governemn  from '../images/kinga-kolodziejska-MEGB-u82JnU-unsplash.jpg'
+import  residenc  from '../images/mitchell-luo.jpg'
+// import  residenc  from '../images/mitchell-luo-UBU_pM78yxQ-unsplash.jpg'
+// import  governemn  from '../images/kinga-kolodziejska-MEGB-u82JnU-unsplash.jpg'
+import  governemn  from '../images/800x533.jpg'
 import  comm  from '../images/pexels-vladislav-vasnetsov-2682683.jpg'
 import { MobileNav } from '../components/Header/MobileNav'
 import { NavbarContext } from '../context/NavbarContext'
@@ -90,6 +92,7 @@ const HeaderTitleGreen = styled.p`
   text-align: left;
 
   @media (max-width: 768px) { 
+    font-size: 2.3rem;
     color: #08313A;
     text-align: center;
 	}
@@ -135,7 +138,7 @@ const TopPara = styled.p`
 
   @media (max-width: 768px) { 
     color: #9aa8bd;
-    // font-size: 1.1rem;
+    font-size: 1.1rem;
     text-align: center;
 	}
 `
