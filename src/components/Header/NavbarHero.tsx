@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from "react-router-dom"
 import styled from 'styled-components'
 import bgImg from '../../images/joanna-kosinska-mjC9apK53a8-unsplash.jpg'
 import logo from '../../images/zanalogo.png'
@@ -89,7 +88,7 @@ const MainParagraph = styled.p`
 	}
 `
 const SpanColor = styled.span`
-  color: #08313A;
+  color: #08313A; 
   font-family: sans-serif;
   font-size: 4rem;
   font-weight: 600;
@@ -99,7 +98,7 @@ const SpanColor = styled.span`
     color: #08313A;
     font-family: sans-serif;
     font-size: 2.4rem;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
 	}
 `
